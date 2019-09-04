@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>spring-cloud-dataflow-server-local-autoconfig</artifactId>
+	<version>1.7.4.RELEASE</version>
+	<packaging>jar</packaging>
+	<name>spring-cloud-dataflow-server-local-autoconfig</name>
+	<description>Data Flow Local Server Autoconfig</description>
+
+	<parent>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-dataflow-parent</artifactId>
+		<version>1.7.4.RELEASE</version>
+	</parent>
+	
+	<properties>
+		<quartz.version>2.2.3</quartz.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-dataflow-server-core</artifactId>
+			<version>1.7.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-deployer-resource-maven</artifactId>
+			<version>${spring-cloud-deployer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-deployer-resource-docker</artifactId>
+			<version>${spring-cloud-deployer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-deployer-resource-support</artifactId>
+			<version>${spring-cloud-deployer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-deployer-local</artifactId>
+			<version>${spring-cloud-deployer.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>${quartz.version}</version>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>c3p0</groupId>
+  					<artifactId>c3p0</artifactId>
+		    	</exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-test</artifactId>
+		    <scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
