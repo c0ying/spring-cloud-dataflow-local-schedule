@@ -24,3 +24,4 @@ java -jar spring-cloud-dataflow-server-local.jar
 
 基于Spring cloud DataFlow 1.7.4.RELEASE进行修改
 
+[下载](binary/spring-cloud-dataflow-server-local-quartz-1.7.4.RELEASE.jar)
